@@ -1,7 +1,7 @@
 # Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: CreateHandle.pm,v 1.7 2010/03/31 11:58:31 gavin Exp $
+# $Id: CreateHandle.pm,v 1.8 2010/06/15 10:47:31 gavin Exp $
 
 package WWW::CNic::Response::CreateHandle;
 use vars qw($VERSION);
@@ -10,7 +10,7 @@ use vars qw($VERSION);
 
 =head1 NAME
 
-WWW::CNic::Response::CreateHandle - a WWW::CNic response object for creating new handles. It is advisable to create a new handle when registering multiple domains to avoid administration problems in the future.
+WWW::CNic::Response::CreateHandle - a WWW::CNic response object for creating new handles.
 
 =head1 SYNOPSIS
 

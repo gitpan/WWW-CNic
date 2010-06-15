@@ -1,4 +1,4 @@
-# $Id: NG.pm,v 1.5 2010/06/15 08:21:56 gavin Exp $
+# $Id: NG.pm,v 1.6 2010/06/15 10:47:31 gavin Exp $
 # Copyright (c) 2010 CentralNic Ltd. This program is Free Software; you
 # can use it and/or modify it under the same terms as Perl itself.
 package WWW::CNic::NG;
@@ -31,10 +31,6 @@ sub AUTOLOAD {
 	$query->set(%params);
 	return $query->execute;
 };
-
-1;
-
-__END__
 
 =pod
 
@@ -113,4 +109,6 @@ L<WWW::CNic::Simple>
 =backAUTOLOAD
 
 =cut
+
+1;
 
