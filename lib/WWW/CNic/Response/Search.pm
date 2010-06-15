@@ -1,7 +1,7 @@
 # Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: Search.pm,v 1.12 2010/03/31 11:58:31 gavin Exp $
+# $Id: Search.pm,v 1.13 2010/06/15 08:21:56 gavin Exp $
 
 package WWW::CNic::Response::Search;
 use vars qw($VERSION);
@@ -10,7 +10,7 @@ use vars qw($VERSION);
 
 =head1 NAME
 
-WWW::CNic::Response::Register - a WWW::CNic response object for domain searching.
+WWW::CNic::Response::Search - a WWW::CNic response object for domain searching.
 
 =head1 SYNOPSIS
 

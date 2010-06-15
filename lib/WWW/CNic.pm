@@ -1,7 +1,7 @@
 # Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: CNic.pm,v 1.63 2010/06/11 12:53:06 gavin Exp $
+# $Id: CNic.pm,v 1.64 2010/06/15 08:21:56 gavin Exp $
 package WWW::CNic;
 use LWP;
 use LWP::ConnCache;
@@ -11,7 +11,7 @@ use Digest::MD5 qw(md5_hex);
 use vars qw($VERSION $CONNECTION_CACHE);
 use strict;
 
-our $VERSION = '0.33';
+our $VERSION = '0.34';
 
 =pod
 

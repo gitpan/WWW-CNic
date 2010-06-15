@@ -1,7 +1,7 @@
 # Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: DomainList.pm,v 1.9 2010/03/31 11:58:31 gavin Exp $
+# $Id: DomainList.pm,v 1.10 2010/06/15 08:21:56 gavin Exp $
 
 package WWW::CNic::Response::DomainList;
 use vars qw($VERSION);
@@ -10,7 +10,7 @@ use vars qw($VERSION);
 
 =head1 NAME
 
-WWW::CNic::Response::Renewals - a WWW::CNic response object for domain lists.
+WWW::CNic::Response::DomainList - a WWW::CNic response object for domain lists.
 
 =head1 SYNOPSIS
 

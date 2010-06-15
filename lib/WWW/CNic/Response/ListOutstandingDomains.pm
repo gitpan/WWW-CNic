@@ -1,7 +1,7 @@
 # Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: ListOutstandingDomains.pm,v 1.2 2010/03/31 11:58:31 gavin Exp $
+# $Id: ListOutstandingDomains.pm,v 1.3 2010/06/15 08:21:56 gavin Exp $
 
 package WWW::CNic::Response::ListOutstandingDomains;
 use vars qw($VERSION);
@@ -9,6 +9,8 @@ use vars qw($VERSION);
 =pod
 
 =head1 NAME
+
+WWW::CNic::Response::ListOutstandingDomains - a WWW::CNic response object for listing outstanding domains.
 
 =head1 SYNOPSIS
 

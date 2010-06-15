@@ -1,4 +1,4 @@
-# $Id: NG.pm,v 1.4 2010/06/14 16:04:32 gavin Exp $
+# $Id: NG.pm,v 1.5 2010/06/15 08:21:56 gavin Exp $
 # Copyright (c) 2010 CentralNic Ltd. This program is Free Software; you
 # can use it and/or modify it under the same terms as Perl itself.
 package WWW::CNic::NG;
@@ -40,7 +40,7 @@ __END__
 
 =head1 NAME
 
-C<WWW::CNIC::NG> - a next generation interface to C<WWW:CNic>.
+WWW::CNIC::NG - a next generation interface to C<WWW:CNic>.
 
 =head1 USAGE
 
