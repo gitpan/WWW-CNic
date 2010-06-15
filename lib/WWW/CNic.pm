@@ -1,7 +1,7 @@
 # Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: CNic.pm,v 1.65 2010/06/15 10:47:31 gavin Exp $
+# $Id: CNic.pm,v 1.67 2010/06/15 16:03:57 gavin Exp $
 package WWW::CNic;
 use LWP;
 use LWP::ConnCache;
@@ -11,7 +11,7 @@ use Digest::MD5 qw(md5_hex);
 use vars qw($VERSION $CONNECTION_CACHE);
 use strict;
 
-our $VERSION = '0.35';
+our $VERSION = '0.36';
 
 =pod
 
@@ -206,7 +206,6 @@ sub execute {
 		$self->{_command} eq 'handle_info'		&& return $self->_handle_info();
 		$self->{_command} eq 'register'			&& return $self->_register();
 		$self->{_command} eq 'register_idn'		&& return $self->_register(idn => 1);
-		$self->{_command} eq 'register_atgb'		&& return $self->_register_atgb();
 		$self->{_command} eq 'modify'			&& return $self->_modify();
 		$self->{_command} eq 'modify_handle'		&& return $self->_modify_handle();
 		$self->{_command} eq 'renewals'			&& return $self->_upcoming_renewals();
@@ -393,38 +392,6 @@ sub _register {
 	$self->{_response}->{_raw} = $self->_get($req);
 	use WWW::CNic::Response::Register;
 	return WWW::CNic::Response::Register->new($self->{_response}->{_raw});
-}
-
-sub _register_atgb {
-	my $self = shift;
-	$self->{_base} =~ s/^http:/https:/g;	# Requires SSL
-	die("Missing domain name") if $self->{_domain} eq '';
-	die("Missing username") if $self->{_username} eq '';
-	die("Missing password") if $self->{_password} eq '';
-	my ($fname, $sname, $suffix) = split(/\./, $self->{_domain}, 3);
-	my %params = 	(
-				user		=> $self->{_username},
-				password	=> $self->_crypt_md5($self->{_password}),
-				test		=> $self->{_test},
-				fname		=> $fname,
-				sname		=> $sname,
-				suffix		=> $suffix,
-				registrant	=> $self->{_params}->{registrant},
-				handle		=> $self->_build_handle_string($self->{_params}->{handle}),
-				user_password	=> $self->{_params}->{user_password},
-				send_email	=> $self->{_params}->{send_email}
-			);
-	my $req = HTTP::Request->new(POST => "$self->{_base}/register_atgb");
-	$req->content_type('application/x-www-form-urlencoded');
-	my @content;
-	foreach my $name(keys %params) {
-		my $pair = uri_escape($name).'='.uri_escape($params{$name});
-		push(@content, $pair);
-	}
-	$req->content(join('&', @content));
-	$self->{_response}->{_raw} = $self->_get($req);
-	use WWW::CNic::Response::Register::AtGB;
-	return WWW::CNic::Response::Register::AtGB->new($self->{_response}->{_raw});
 }
 
 sub _modify {

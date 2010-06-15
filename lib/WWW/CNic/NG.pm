@@ -1,4 +1,4 @@
-# $Id: NG.pm,v 1.6 2010/06/15 10:47:31 gavin Exp $
+# $Id: NG.pm,v 1.7 2010/06/15 12:53:14 gavin Exp $
 # Copyright (c) 2010 CentralNic Ltd. This program is Free Software; you
 # can use it and/or modify it under the same terms as Perl itself.
 package WWW::CNic::NG;
@@ -36,7 +36,7 @@ sub AUTOLOAD {
 
 =head1 NAME
 
-WWW::CNIC::NG - a next generation interface to C<WWW:CNic>.
+WWW::CNic::NG - a next generation interface to C<WWW:CNic>.
 
 =head1 USAGE
 
@@ -106,7 +106,7 @@ L<WWW::CNic::Cookbook>
 
 L<WWW::CNic::Simple>
 
-=backAUTOLOAD
+=back
 
 =cut
 
