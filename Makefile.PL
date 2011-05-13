@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # Makefile.PL for WWW::CNic
-# $Id: Makefile.PL,v 1.7 2005/06/30 11:47:11 gavin Exp $
+# $Id: Makefile.PL,v 1.9 2011/05/13 13:31:49 gavin Exp $
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
@@ -9,6 +9,7 @@ WriteMakefile(
 	'PREREQ_PM'		=> {
 		LWP		=> 0,
 		Digest::MD5	=> 0,
+		Crypt::SSLeay	=> 0,
 	},
 	'AUTHOR'		=> 'CentralNic Ltd <toolkit@centralnic.com>',
 	'ABSTRACT_FROM'		=> 'lib/WWW/CNic.pm',

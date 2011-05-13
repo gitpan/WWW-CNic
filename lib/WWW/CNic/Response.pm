@@ -1,7 +1,7 @@
-# Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
+# Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: Response.pm,v 1.14 2010/03/31 11:58:31 gavin Exp $
+# $Id: Response.pm,v 1.15 2011/05/13 13:31:49 gavin Exp $
 
 package WWW::CNic::Response;
 use vars qw($VERSION);
@@ -60,7 +60,7 @@ This prints a human-readable dump of the data stored in the object to C<STDOUT>.
 
 =head1 COPYRIGHT
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 

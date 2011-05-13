@@ -1,7 +1,7 @@
-# Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
+# Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: Cookbook.pm,v 1.52 2010/04/26 13:35:23 gavin Exp $
+# $Id: Cookbook.pm,v 1.53 2011/05/13 13:31:49 gavin Exp $
 
 package WWW::CNic::Cookbook;
 use vars qw($VERSION);
@@ -992,7 +992,7 @@ We're always keen to find out about how people are using our Toolkit system, and
 
 =head1 Copyright
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 See Also
 

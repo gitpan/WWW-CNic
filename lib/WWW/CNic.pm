@@ -1,7 +1,7 @@
-# Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
+# Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: CNic.pm,v 1.67 2010/06/15 16:03:57 gavin Exp $
+# $Id: CNic.pm,v 1.68 2011/05/13 13:31:49 gavin Exp $
 package WWW::CNic;
 use LWP;
 use LWP::ConnCache;
@@ -11,7 +11,7 @@ use Digest::MD5 qw(md5_hex);
 use vars qw($VERSION $CONNECTION_CACHE);
 use strict;
 
-our $VERSION = '0.36';
+our $VERSION = '0.38';
 
 =pod
 
@@ -136,7 +136,7 @@ This method makes the transaction and returns an instance of a C<WWW::CNic::Resp
 
 =head1 COPYRIGHT
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
@@ -229,6 +229,7 @@ sub execute {
 		$self->{_command} eq 'registrant_transfer'	&& return $self->_registrant_transfer();
 		$self->{_command} eq 'lock_domain'		&& return $self->_lock_domain();
 		$self->{_command} eq 'unlock_domain'		&& return $self->_unlock_domain();
+		$self->{_command} eq 'validate_domain'		&& return $self->_validate_domain();
 		die("Invalid command '$self->{_command}'");
 	}
 }
@@ -917,6 +918,25 @@ sub _unlock_domain {
 	$self->{_response}->{_raw} = $self->_get($req);
 	use WWW::CNic::Response::UnlockDomain;
 	return WWW::CNic::Response::UnlockDomain->new($self->{_response}->{_raw});
+}
+
+sub _validate_domain {
+	my $self = shift;
+	$self->{_base} =~ s/^http:/https:/g;	# Requires SSL
+	die("Missing username") if $self->{_username} eq '';
+	die("Missing password") if $self->{_password} eq '';
+	die("Missing domain")	if $self->{_domain}   eq '';
+	my %params = (
+				user		=> $self->{_username},
+				password	=> $self->_crypt_md5($self->{_password}),
+				test		=> $self->{_test},
+				domain		=> $self->{_domain},
+	);
+	my $url = "$self->{_base}/validate_domain";
+	my $req = POST($url, \%params);
+	$self->{_response}->{_raw} = $self->_get($req);
+	use WWW::CNic::Response::ValidateDomain;
+	return WWW::CNic::Response::ValidateDomain->new($self->{_response}->{_raw});
 }
 
 sub _get {

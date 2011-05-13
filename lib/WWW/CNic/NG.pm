@@ -1,5 +1,5 @@
-# $Id: NG.pm,v 1.7 2010/06/15 12:53:14 gavin Exp $
-# Copyright (c) 2010 CentralNic Ltd. This program is Free Software; you
+# $Id: NG.pm,v 1.10 2011/05/13 13:31:49 gavin Exp $
+# Copyright (c) 2011 CentralNic Ltd. This program is Free Software; you
 # can use it and/or modify it under the same terms as Perl itself.
 package WWW::CNic::NG;
 use WWW::CNic;
@@ -8,10 +8,12 @@ use strict;
 our $AUTOLOAD;
 
 sub new {
+	use Data::Dumper;
 	my $package = shift(@_);
 	my $self = bless({'package' => $package}, $package);
-	foreach my $name (keys(%_)) {
-		$self->{$name} = $_{$name};
+	my %params = @_;
+	foreach my $name (keys(%params)) {
+		$self->{$name} = $params{$name};
 	}
 	return $self;
 }
@@ -19,7 +21,7 @@ sub new {
 sub AUTOLOAD {
 	my ($self, %params) = @_;
 	$AUTOLOAD =~ s/^$self->{'package'}:://g;
-	next if ($AUTOLOAD eq 'DESTROY');
+	return if ($AUTOLOAD eq 'DESTROY');
 
 	my $query = WWW::CNic->new(
 		'command'	=> $AUTOLOAD,
@@ -27,6 +29,7 @@ sub AUTOLOAD {
 		'username'	=> $self->{'username'},
 		'password'	=> $self->{'password'},
 		'domain'	=> $params{'domain'},
+		'host'		=> $self->{'host'},
 	);
 	$query->set(%params);
 	return $query->execute;
@@ -86,7 +89,7 @@ method.
 
 =head1 COPYRIGHT
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module
 is free software; you can redistribute it and/or modify it under the
 same terms as Perl itself.
 

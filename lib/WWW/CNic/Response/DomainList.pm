@@ -1,7 +1,7 @@
-# Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
+# Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: DomainList.pm,v 1.10 2010/06/15 08:21:56 gavin Exp $
+# $Id: DomainList.pm,v 1.11 2011/05/13 13:31:49 gavin Exp $
 
 package WWW::CNic::Response::DomainList;
 use vars qw($VERSION);
@@ -44,7 +44,7 @@ Returns a string containing the current status of the domain, for example: 'Live
 
 =head1 COPYRIGHT
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 

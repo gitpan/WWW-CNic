@@ -1,7 +1,7 @@
-# Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
+# Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: PollTransfers.pm,v 1.4 2010/06/15 08:21:56 gavin Exp $
+# $Id: PollTransfers.pm,v 1.5 2011/05/13 13:31:49 gavin Exp $
 
 package WWW::CNic::Response::PollTransfers;
 use vars qw($VERSION);
@@ -43,7 +43,7 @@ This returns an array of hashrefs containing information about a transfer. The h
 
 =head1 COPYRIGHT
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 

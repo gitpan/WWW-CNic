@@ -1,7 +1,7 @@
-# Copyright (c) 2010 CentralNic Ltd. All rights reserved. This program is
+# Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: CreateHandle.pm,v 1.8 2010/06/15 10:47:31 gavin Exp $
+# $Id: CreateHandle.pm,v 1.9 2011/05/13 13:31:49 gavin Exp $
 
 package WWW::CNic::Response::CreateHandle;
 use vars qw($VERSION);
@@ -35,7 +35,7 @@ Returns the ID of the handle created. This will be the letter 'H' followed by di
 
 =head1 COPYRIGHT
 
-This module is (c) 2010 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+This module is (c) 2011 CentralNic Ltd. All rights reserved. This module is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 

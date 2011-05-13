@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # an example of how to use WWW::CNic in a web environment.
 # a comparable script using the whois server works substantially slower.
-# $Id: search.cgi,v 1.1 2002/08/13 13:46:48 gavin Exp $
+# $Id: search.cgi,v 1.2 2011/05/13 13:31:49 gavin Exp $
 use WWW::CNic;
 use CGI qw(:standard);
 use CGI::Carp qw(fatalsToBrowser);

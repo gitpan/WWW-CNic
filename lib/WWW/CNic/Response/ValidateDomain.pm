@@ -1,16 +1,16 @@
 # Copyright (c) 2011 CentralNic Ltd. All rights reserved. This program is
 # free software; you can redistribute it and/or modify it under the same
 # terms as Perl itself.
-# $Id: ModifyHandle.pm,v 1.5 2011/05/13 13:31:49 gavin Exp $
+# $Id: ValidateDomain.pm,v 1.1 2011/05/13 13:31:49 gavin Exp $
 
-package WWW::CNic::Response::ModifyHandle;
+package WWW::CNic::Response::ValidateDomain;
 use vars qw($VERSION);
 
 =pod
 
 =head1 NAME
 
-WWW::CNic::Response::ModifyHandle - a WWW::CNic response object for handle modification.
+WWW::CNic::Response::ValidateDomain - a WWW::CNic response object for validating a domain name.
 
 =head1 SYNOPSIS
 
@@ -23,7 +23,7 @@ WWW::CNic::Response::ModifyHandle - a WWW::CNic response object for handle modif
 
 =head1 DESCRIPTION
 
-Response module for handle modification requests via the CentralNic Toolkit (http://toolkit.centralnic.com/). This module inherits all its methods from the base class, I<WWW::CNic::Response>.
+Response module for validating domain names via the CentralNic Toolkit (http://toolkit.centralnic.com/). This module inherits all its methods from the base class, I<WWW::CNic::Response>.
 
 =head1 METHODS
 

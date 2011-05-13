@@ -1,5 +1,5 @@
 #!/usr/bin/env perl -w
-# $Id: use.t,v 1.1 2005/04/05 16:17:12 gavin Exp $
+# $Id: use.t,v 1.2 2011/05/13 13:31:50 gavin Exp $
 use strict;
 use Test;
 BEGIN { plan tests => 1 }
